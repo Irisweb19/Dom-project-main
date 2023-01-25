@@ -3,7 +3,7 @@
 
 
 const minusCounter = ()=>{
-    if(minus.innertext < 100 num--)
+    // if(minus.innertext < 100 num)
 }
 
 
