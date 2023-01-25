@@ -1,0 +1,30 @@
+.header1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 500px;
+    padding: 20px   150px;
+    background-color: red;
+}
+
+.navbar ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    
+}
+
+.Cparent{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.fle{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
