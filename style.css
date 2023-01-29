@@ -1,7 +1,7 @@
 .header1{
     display: flex;
     flex-wrap: wrap;
-    gap: 500px;
+    /* gap: 500px; */
     padding: 20px   150px;
     background-color: red;
 }
@@ -16,6 +16,7 @@
 .Cparent{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: 30px;
     margin-top: 50px;
     gap: 20px;
@@ -26,5 +27,16 @@
     justify-content: space-between;
 }
 
+.inpQty{
+    display: inline;
+    width:50px;
+}
 
+.fa{
+    cursor: pointer;
+    font-size: 3em;
+}
 
+.fa-red{
+    color: red;
+}
