@@ -50,6 +50,12 @@ const products  = [{
 },
 ]
 
+const badge = document.querySelector(".badge")
+const cart = []
+badge.innerText = cart.length
+const cartItem = document.querySelector(".cartitem")
+
+
 let items = ""
 products.map((product)=>{
     items += `
@@ -64,7 +70,7 @@ products.map((product)=>{
                 <p id="qty"><b>QTY:</b></p> 
                 <input class="inpQty" type="number" min="1" value="${product.qty}">
                 <i class="fa fa-heart" aria-hidden="true"></i>
-                <a href="#" class="btn btn-primary" >Add to cart</a>
+                <a href="#" class="btn btn-primary" id="addtocart">Add to cart</a>
                 </div>
             </div>
         </div>
@@ -72,11 +78,41 @@ products.map((product)=>{
 })
 
 const cParent = document.querySelector(".Cparent")
-cParent.innerHTML = items 
+cParent.innerHTML = items
 
+
+
+const addToCart = document.querySelectorAll("#addtocart")
+for(let i=0; i<addToCart.length; i++){
+    addToCart[i].addEventListener("click", ()=>{
+        const productName = addToCart[i].parentElement.parentElement.firstElementChild.firstElementChild.innerText
+        badge.innerText = cart.length
+        const newProd = products.filter((product) => product.name == productName)
+        cart.push(newProd[0])
+        showCart()
+    })
+}
+
+const showCart = () =>{
+    let cartList = ""
+    console.log(cart);
+    cart.map((item)=>{
+
+        cartList += `
+                <tr>
+                    <td><img src="${item.img}" width="30px" height="30px" /></td>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td>${item.qty}</td>
+                    <td>${item.price*item.qty}</td>
+                </tr>
+            `
+            cartItem.innerHTML = cartList
+        
+    })
+}
 
 const fa = document.querySelectorAll(".fa")
-
 for(let i=0; i<fa.length; i++){
     fa[i].addEventListener("click", ()=>{
         fa[i].classList.toggle("fa-red")

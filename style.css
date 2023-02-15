@@ -1,6 +1,7 @@
 .header1{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     /* gap: 500px; */
     padding: 20px   150px;
     background-color: red;
@@ -39,4 +40,26 @@
 
 .fa-red{
     color: red;
+}
+
+.cart{
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+    
+}
+
+.ct {
+    position: relative;
+    border: 1px solid white;
+}
+
+.badge{
+    position: absolute;
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    top: -10px;
+    right: -10px;
 }
