@@ -1,49 +1,49 @@
 const products  = [{
     name: "Prince",
-    qty: 1,
+    qty: 2,
     img: "PR.JPG",
     price: 1000,
 },
 {
     name: "Zee",
-    qty: 3,
+    qty: 1,
     img: "ZE.JPG",
     price: 50.04,
 },
 {
     name: "Max",
-    qty: 5,
+    qty: 1,
     img: "MAX.PNG",
     price: 150.02,
 },
 {
     name: "Yunus",
-    qty: 5,
+    qty: 1,
     img: "YU.JPG",
     price: 500,
 },
 {
     name: "RAE",
-    qty: 5,
+    qty: 1,
     img: "RAE.PNG",
     price: 600,
 },
 {
     name: "Abraham",
-    qty: 5,
+    qty: 1,
     img: "AB.jpeg",
     price: 350,
 },
 {
     name: "Regal",
-    qty: 5,
+    qty: 1,
     img: "reg.jpg",
     price: 00,
 
 },
 {
     name: "Arsenal",
-    qty: 5,
+    qty: 1,
     img: "IMG_0105.jpg",
     price: 1000000,
 
@@ -51,8 +51,8 @@ const products  = [{
 ]
 
 const badge = document.querySelector(".badge")
-const cart = []
-badge.innerText = cart.length
+const cart = [] 
+badge.innerText = cart.length++
 const cartItem = document.querySelector(".cartitem")
 
 
@@ -64,11 +64,11 @@ products.map((product)=>{
             <div class="card-body">
                 <div class="fle"> 
                     <h5 class="card-title">${product.name}</h5>
-                    <h5 class="card-title" id="price">$${product.price}</h5>
+                    <h5 class="card-title" id="price">${product.price}</h5>
                 </div> 
                 <div class="fle">
                 <p id="qty"><b>QTY:</b></p> 
-                <input class="inpQty" type="number" min="1" value="${product.qty}">
+                <input class="inpQty" type="number" min="0" value="${product.qty}">
                 <i class="fa fa-heart" aria-hidden="true"></i>
                 <a href="#" class="btn btn-primary" id="addtocart">Add to cart</a>
                 </div>
@@ -93,6 +93,7 @@ for(let i=0; i<addToCart.length; i++){
     })
 }
 
+
 const showCart = () =>{
     let cartList = ""
     console.log(cart);
@@ -111,6 +112,26 @@ const showCart = () =>{
         
     })
 }
+
+
+// const showCart = () =>{
+//     let cartList = ""
+//     console.log(cart);
+//     cart.map((item)=>{
+
+//         cartList += `
+//                 <tr>
+//                     <td><img src="${item.img}" width="30px" height="30px" /></td>
+//                     <td>${item.name}</td>
+//                     <td>${item.price}</td>
+//                     <td>${item.qty}</td>
+//                     <td>${item.price*item.qty}</td>
+//                 </tr>
+//             `
+//             cartItem.innerHTML = cartList
+        
+//     })
+// }
 
 const fa = document.querySelectorAll(".fa")
 for(let i=0; i<fa.length; i++){
